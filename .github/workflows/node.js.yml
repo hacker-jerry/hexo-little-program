@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [12.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -26,6 +26,16 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - run: git clone https://github.com/zhaoo/hexo-weapp-zhaoo.git
+    - run: cd hexo-weapp-zhaoo
+    - run: npm install -g @tarojs/cli@3.2.1
+    - run: cd client
+    - run: npm run build:weapp
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+          deploy_key: ${{ secrets.Token }}
+          external_repository: hacker-jerry/hexo-little-program
+          publish_branch: gh-pages
+          publish_dir: ./dist
+          commit_message: ${{ github.event.head_commit.message }}
