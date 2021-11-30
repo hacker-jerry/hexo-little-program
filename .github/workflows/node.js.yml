@@ -22,10 +22,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
     - run: git clone https://github.com/zhaoo/hexo-weapp-zhaoo.git
     - run: cd hexo-weapp-zhaoo
     - run: npm install -g @tarojs/cli@3.2.1
