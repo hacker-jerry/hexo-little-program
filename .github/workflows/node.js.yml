@@ -27,7 +27,7 @@ jobs:
     - run: npm install @tarojs/cli@3.2.1
       working-directory: ./client
     - run: npm install
-      working-directory: .o/client
+      working-directory: ./client
     - run: npm run build:weapp
       working-directory: ./client
 
