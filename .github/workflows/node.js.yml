@@ -25,19 +25,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: git clone https://github.com/zhaoo/hexo-weapp-zhaoo.git
-      
-#     - run: cd /home/runner/work/hexo-little-program/hexo-little-program/hexo-weapp-zhaoo
-    - run: npm install @tarojs/cli@3.2.1
-      working-directory: ./hexo-weapp-zhaoo/client
-    - run: npm install
-      working-directory: ./hexo-weapp-zhaoo/client
-    - run: npm run build:weapp
-      working-directory: ./hexo-weapp-zhaoo/client
+#     - run: npm install @tarojs/cli@3.2.1
+#       working-directory: ./hexo-weapp-zhaoo/client
+#     - run: npm install
+#       working-directory: ./hexo-weapp-zhaoo/client
+#     - run: npm run build:weapp
+#       working-directory: ./hexo-weapp-zhaoo/client
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+      uses: ad-m/github-push-action@master
       with:
-          deploy_key: ${{ secrets.Token }}
-          external_repository: hacker-jerry/hexo-little-program
-          publish_branch: gh-pages
-          publish_dir: ./dist
-          commit_message: ${{ github.event.head_commit.message }}
+          github_token: ${{ secrets.Token }}
+          branch: "pages-git"
