@@ -31,9 +31,10 @@ jobs:
 #       working-directory: ./hexo-weapp-zhaoo/client
 #     - run: npm run build:weapp
 #       working-directory: ./hexo-weapp-zhaoo/client
-    - run: mv hexo-weapp-zhaoo/* ./
+#     - run: mv hexo-weapp-zhaoo/* ./
     - name: Deploy
-      uses: ad-m/github-push-action@master
+      uses: peaceiris/actions-gh-pages@v3
       with:
-          github_token: ${{ secrets.Token }}
-          branch: "pages-git"
+          github_token: ${{ secrets.TOKEN }}
+          publish_branch:  "pages-git"
+          publish_dir: ./hexo-weapp-zhaoo
