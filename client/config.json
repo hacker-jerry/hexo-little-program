@@ -1,0 +1,16 @@
+{
+  "baseUrl": "https://www.blog.hackerjerry.top/api",
+  "webUrl": "https://www.blog.hackerjerry.top",
+  "donate": {
+    "wechat": "https://blog.img.hackerjerry.top/wechat.jpg"
+  },
+  "leancloud": {
+    "appId": "5nmYX1URDFyDdOVu6WxizEsF-gzGzoHsz",
+    "appKey": "xllg4mYlf0eT3efi7N0VOTeH",
+    "serverURLs": "https://leancloud.cn/"
+  },
+  "motto": {
+    "api": "https://v1.hitokoto.cn/?encode=text&c=i",
+    "default": "我在开了灯的床头下，想问问自己的心啊。"
+  }
+}
