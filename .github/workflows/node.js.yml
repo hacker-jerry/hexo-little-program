@@ -24,17 +24,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: git clone https://github.com/zhaoo/hexo-weapp-zhaoo.git
     - run: npm install @tarojs/cli@3.2.1
-      working-directory: ./hexo-weapp-zhaoo/client
+      working-directory: ./client
     - run: npm install
-      working-directory: ./hexo-weapp-zhaoo/client
+      working-directory: .o/client
     - run: npm run build:weapp
-      working-directory: ./hexo-weapp-zhaoo/client
+      working-directory: ./client
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
           github_token: ${{ secrets.TOKEN }}
           publish_branch:  "pages-git"
-          publish_dir: ./hexo-weapp-zhaoo/client/dist
+          publish_dir: ./client/dist
