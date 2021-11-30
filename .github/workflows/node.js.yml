@@ -22,10 +22,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: git clone https://github.com/zhaoo/hexo-weapp-zhaoo.git
-    - run: cd ./hexo-weapp-zhaoo
-    #- run: npm install -g @tarojs/cli@3.2.1
+    - run: cd /home/runner/work/hexo-little-program/hexo-little-program/hexo-weapp-zhaoo
     - run: ls
-    - run: pwd
+    #- run: npm install -g @tarojs/cli@3.2.1
     - run: npm run build:weapp
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
