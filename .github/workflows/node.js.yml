@@ -13,7 +13,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+#     defaults:
+#       run:
+#         shell: bash
+#         working-directory: scripts
     strategy:
       matrix:
         node-version: [12.x]
@@ -22,10 +25,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: git clone https://github.com/zhaoo/hexo-weapp-zhaoo.git
-    - run: cd /home/runner/work/hexo-little-program/hexo-little-program/hexo-weapp-zhaoo
+      
+#     - run: cd /home/runner/work/hexo-little-program/hexo-little-program/hexo-weapp-zhaoo
     - run: ls
+      working-directory: ./hexo-weapp-zhaoo/client
     #- run: npm install -g @tarojs/cli@3.2.1
     - run: npm run build:weapp
+      working-directory: ./hexo-weapp-zhaoo/client
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
