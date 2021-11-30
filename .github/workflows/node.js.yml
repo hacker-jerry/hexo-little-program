@@ -29,7 +29,7 @@ jobs:
 #     - run: cd /home/runner/work/hexo-little-program/hexo-little-program/hexo-weapp-zhaoo
     - run: ls
       working-directory: ./hexo-weapp-zhaoo/client
-    #- run: npm install -g @tarojs/cli@3.2.1
+    - run: npm install -g @tarojs/cli@3.2.1
     - run: npm run build:weapp
       working-directory: ./hexo-weapp-zhaoo/client
     - name: Deploy
